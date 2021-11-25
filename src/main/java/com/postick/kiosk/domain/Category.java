@@ -27,4 +27,12 @@ public class Category {
 	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
 	private List<Item> items = new ArrayList<>();
 
+	public static Category create(String name) {
+
+		Category category = new Category();
+		category.name = name;
+
+		return category;
+	}
+
 }
