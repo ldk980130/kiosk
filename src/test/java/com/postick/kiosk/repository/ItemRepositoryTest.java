@@ -20,7 +20,6 @@ import com.postick.kiosk.domain.Item;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
-@Rollback(value = false)
 public class ItemRepositoryTest {
 
 	@Autowired ItemRepository itemRepository;

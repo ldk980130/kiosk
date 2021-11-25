@@ -36,9 +36,11 @@ public class Order {
 	public static Order create(List<OrderItem> orderItems) {
 
 		Order order = new Order();
+		order.totalPrice = 0;
 
 		for (OrderItem orderItem : orderItems) {
 			orderItem.setOrder(order);
+			order.totalPrice += orderItem.getOrderPrice();
 		}
 
 		order.orderDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
