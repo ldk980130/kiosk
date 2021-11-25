@@ -39,12 +39,12 @@ public class OrderRepositoryTest {
 		categoryRepository.save(teaCategory);
 		categoryRepository.save(dessertCategory);
 
-		Item americano = Item.create(coffeeCategory, "아메리카노", 3000, 30);
-		Item cafeLatte = Item.create(coffeeCategory, "카페라떼", 3000, 30);
-		Item uza = Item.create(teaCategory, "유자차", 3000, 30);
-		Item greenTea = Item.create(teaCategory, "녹차", 3000, 30);
-		Item cake = Item.create(dessertCategory, "케이크", 3000, 30);
-		Item croffle = Item.create(dessertCategory, "크로플", 3000, 30);
+		Item americano = Item.create(coffeeCategory, "아메리카노", 3000);
+		Item cafeLatte = Item.create(coffeeCategory, "카페라떼", 3000);
+		Item uza = Item.create(teaCategory, "유자차", 3000);
+		Item greenTea = Item.create(teaCategory, "녹차", 3000);
+		Item cake = Item.create(dessertCategory, "케이크", 3000);
+		Item croffle = Item.create(dessertCategory, "크로플", 3000);
 		itemRepository.save(americano);
 		itemRepository.save(cafeLatte);
 		itemRepository.save(uza);

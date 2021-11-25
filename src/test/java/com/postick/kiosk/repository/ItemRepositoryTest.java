@@ -30,7 +30,7 @@ public class ItemRepositoryTest {
 		//given
 		Category category = Category.create("커피");
 		categoryRepository.save(category);
-		Item item = Item.create(category, "아메리카노", 1500, 30);
+		Item item = Item.create(category, "아메리카노", 1500);
 
 		//when
 		itemRepository.save(item);
@@ -45,11 +45,11 @@ public class ItemRepositoryTest {
 		//given
 		Category category1 = Category.create("커피");
 		categoryRepository.save(category1);
-		Item item1 = Item.create(category1, "아메리카노", 1500, 30);
+		Item item1 = Item.create(category1, "아메리카노", 1500);
 
 		Category category2 = Category.create("차");
 		categoryRepository.save(category2);
-		Item item2 = Item.create(category2, "유자차", 1500, 30);
+		Item item2 = Item.create(category2, "유자차", 1500);
 
 		//when
 		List<Item> findItems1 = itemRepository.findAllByCategory(category1);

@@ -46,8 +46,6 @@ public class OrderItem {
 		orderItem.orderPrice = item.getPrice() * count;
 		orderItem.count = count;
 
-		item.removeStock(count);
-
 		return orderItem;
 	}
 }
