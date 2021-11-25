@@ -21,7 +21,7 @@ public class OrderRepository {
 		return order.getId();
 	}
 
-	public Order findOne(Long id) {
+	public Order findById(Long id) {
 		return em.find(Order.class, id);
 	}
 
