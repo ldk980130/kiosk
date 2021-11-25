@@ -33,4 +33,16 @@ public class OrderItem {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "order_id")
 	private Order order;
+
+	public static OrderItem create(Item item, int count) {
+
+		OrderItem orderItem = new OrderItem();
+		orderItem.item = item;
+		orderItem.orderPrice = item.getPrice() * count;
+		orderItem.count = count;
+
+		item.removeStock(count);
+
+		return orderItem;
+	}
 }
