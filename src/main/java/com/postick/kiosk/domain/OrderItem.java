@@ -34,6 +34,11 @@ public class OrderItem {
 	@JoinColumn(name = "order_id")
 	private Order order;
 
+	public void setOrder(Order order) {
+		this.order = order;
+		order.getOrderItems().add(this);
+	}
+
 	public static OrderItem create(Item item, int count) {
 
 		OrderItem orderItem = new OrderItem();

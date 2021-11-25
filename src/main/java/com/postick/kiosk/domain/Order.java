@@ -1,5 +1,7 @@
 package com.postick.kiosk.domain;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +28,21 @@ public class Order {
 	@Column(nullable = false)
 	private Integer totalPrice;
 
+	private String orderDate;
+
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 	private List<OrderItem> orderItems = new ArrayList<>();
+
+	public static Order create(List<OrderItem> orderItems) {
+
+		Order order = new Order();
+
+		for (OrderItem orderItem : orderItems) {
+			orderItem.setOrder(order);
+		}
+
+		order.orderDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+
+		return order;
+	}
 }
