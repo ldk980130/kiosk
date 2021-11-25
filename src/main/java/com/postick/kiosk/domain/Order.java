@@ -19,5 +19,5 @@ public class Order {
 	private Long id;
 
 	@Column(nullable = false)
-	private Long totalPrice;
+	private Integer totalPrice;
 }

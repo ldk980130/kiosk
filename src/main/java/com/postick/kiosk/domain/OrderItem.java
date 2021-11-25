@@ -18,8 +18,8 @@ public class OrderItem {
 	private Long id;
 
 	@Column(nullable = false)
-	private Long orderPrice;
+	private Integer orderPrice;
 
 	@Column(nullable = false)
-	private Long count;
+	private Integer count;
 }
