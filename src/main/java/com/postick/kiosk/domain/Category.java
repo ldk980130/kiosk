@@ -22,7 +22,6 @@ public class Category {
 	@Column(name = "category_id")
 	private Long id;
 
-	@Column(nullable = false, unique = true)
 	private String name;
 
 	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)

@@ -18,6 +18,7 @@ import lombok.RequiredArgsConstructor;
 public class ItemRepository {
 
 	private final EntityManager em;
+	private final CategoryRepository categoryRepository;
 
 	@Transactional
 	public Item save(Category category, String name, int price) {
@@ -32,6 +33,20 @@ public class ItemRepository {
 			.setParameter("name", name)
 			.getResultStream()
 			.findFirst();
+	}
+
+	public List<Item> findByCategory(String name) {
+		Optional<Category> categoryOptional = categoryRepository.findByName(name);
+
+		if (categoryOptional.isEmpty()) {
+			throw new IllegalStateException("카테고리가 없습니다.");
+		}
+
+		return em.createQuery("select i from Item i "
+			+ "inner join Category "
+			+ "where i.category.name =:name")
+			.setParameter("name", name)
+			.getResultList();
 	}
 
 	public Item findById(Long id) {

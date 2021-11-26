@@ -20,10 +20,8 @@ public class Item {
 	@Column(name = "item_id")
 	private Long id;
 
-	@Column(nullable = false, unique = true)
 	private String name;
 
-	@Column(nullable = false)
 	private Integer price;
 
 	@ManyToOne(fetch = FetchType.LAZY)

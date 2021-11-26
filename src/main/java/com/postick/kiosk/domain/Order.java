@@ -26,7 +26,6 @@ public class Order {
 	@Column(name = "order_id")
 	private Long id;
 
-	@Column(nullable = false)
 	private Integer totalPrice;
 
 	private String orderDate;

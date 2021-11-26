@@ -20,10 +20,8 @@ public class OrderItem {
 	@Column(name = "order_item_id")
 	private Long id;
 
-	@Column(nullable = false)
 	private Integer orderPrice;
 
-	@Column(nullable = false)
 	private Integer count;
 
 	@ManyToOne(fetch = FetchType.LAZY)
