@@ -48,10 +48,11 @@ public class OrderRepositoryTest {
 		list.add(OrderItem.create(uza, 1));
 		list.add(OrderItem.create(cake, 1));
 
+		int before = orderRepository.findAll().size();
 		Order order = orderRepository.save(list);
+		int after = orderRepository.findAll().size();
 
 		//then
-		Order findOrder = orderRepository.findAll().get(0);
-		assertThat(findOrder.getId()).isEqualTo(order.getId());
+		assertThat(before).isEqualTo(after - 1);
 	}
 }

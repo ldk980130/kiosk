@@ -31,11 +31,13 @@ public class ItemRepositoryTest {
 
 		//when
 		Category findCategory = categoryRepository.findByName("A").get();
+
+		int before = itemRepository.findAll().size();
 		Item item = itemRepository.save(findCategory, "a", 3000);
+		int after = itemRepository.findAll().size();
 
 		//then
-		List<Item> items = itemRepository.findAll();
-		assertThat(items.get(0).getName()).isEqualTo("a");
+		assertThat(before).isEqualTo(after - 1);
 	}
 
 	@Test
@@ -45,11 +47,11 @@ public class ItemRepositoryTest {
 
 		Category category1 = categoryRepository.save("A");
 
-		Item.create(category1, "a", 1500);
+		itemRepository.save(category1, "a", 1000);
 
 		Category category2 = categoryRepository.save("B");
 
-		Item.create(category2, "b", 1500);
+		itemRepository.save(category2, "b", 1000);
 
 		//when
 		List<Item> findItems1 = category1.getItems();
