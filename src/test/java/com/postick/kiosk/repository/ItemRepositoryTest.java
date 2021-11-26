@@ -27,15 +27,15 @@ public class ItemRepositoryTest {
 	@Test
 	public void saveItem() throws Exception {
 		//given
-		Category category = Category.create("커피");
+		Category category = Category.create("A");
 		categoryRepository.save(category);
 
 		//when
-		Item item = Item.create(category, "아메리카노", 1500);
+		Item item = Item.create(category, "a", 1500);
 
 		//then
 		List<Item> items = itemRepository.findAll();
-		assertThat(items.get(0).getName()).isEqualTo("아메리카노");
+		assertThat(items.get(0).getName()).isEqualTo("a");
 	}
 
 	@Test
@@ -43,15 +43,15 @@ public class ItemRepositoryTest {
 		//given
 		int beforeSize = itemRepository.findAll().size();
 
-		Category category1 = Category.create("커피");
+		Category category1 = Category.create("A");
 		categoryRepository.save(category1);
 
-		Item.create(category1, "아메리카노", 1500);
+		Item.create(category1, "a", 1500);
 
-		Category category2 = Category.create("차");
+		Category category2 = Category.create("B");
 		categoryRepository.save(category2);
 
-		Item.create(category2, "유자차", 1500);
+		Item.create(category2, "b", 1500);
 
 		//when
 		List<Item> findItems1 = category1.getItems();
@@ -59,8 +59,8 @@ public class ItemRepositoryTest {
 		int afterSize = itemRepository.findAll().size();
 
 		//then
-		assertThat(findItems1.get(0).getName()).isEqualTo("아메리카노");
-		assertThat(findItems2.get(0).getName()).isEqualTo("유자차");
+		assertThat(findItems1.get(0).getName()).isEqualTo("a");
+		assertThat(findItems2.get(0).getName()).isEqualTo("b");
 		assertThat(beforeSize + 2).isEqualTo(afterSize);
 	}
 
