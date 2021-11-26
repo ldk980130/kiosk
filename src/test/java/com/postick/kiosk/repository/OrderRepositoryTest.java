@@ -11,7 +11,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -45,12 +44,6 @@ public class OrderRepositoryTest {
 		Item greenTea = Item.create(teaCategory, "녹차", 3000);
 		Item cake = Item.create(dessertCategory, "케이크", 3000);
 		Item croffle = Item.create(dessertCategory, "크로플", 3000);
-		itemRepository.save(americano);
-		itemRepository.save(cafeLatte);
-		itemRepository.save(uza);
-		itemRepository.save(greenTea);
-		itemRepository.save(cake);
-		itemRepository.save(croffle);
 
 		//when
 		List<OrderItem> list = new ArrayList<>();
