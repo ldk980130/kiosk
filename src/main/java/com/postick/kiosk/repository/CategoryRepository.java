@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.persistence.EntityManager;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.postick.kiosk.domain.Category;
 
@@ -13,10 +14,12 @@ import lombok.RequiredArgsConstructor;
 
 @Repository
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class CategoryRepository {
 
 	private final EntityManager em;
 
+	@Transactional
 	public Long save(Category category) {
 		em.persist(category);
 		return category.getId();
