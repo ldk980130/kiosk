@@ -31,7 +31,8 @@ public class ItemRepositoryTest {
 		categoryRepository.save(category);
 
 		//when
-		Item item = Item.create(category, "a", 1500);
+		Category findCategory = categoryRepository.findByName("A").get();
+		Item item = itemRepository.save(findCategory, "a", 3000);
 
 		//then
 		List<Item> items = itemRepository.findAll();
