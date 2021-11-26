@@ -40,13 +40,13 @@ public class CategoryRepositoryTest {
 		//given
 		categoryRepository.save(Category.create("A"));
 		categoryRepository.save(Category.create("B"));
-		categoryRepository.save(Category.create("A"));
+		categoryRepository.save(Category.create("C"));
 
 		//when
-		List<Category> category = categoryRepository.findByName("B");
+		Optional<Category> category = categoryRepository.findByName("B");
 
 		//then
-		assertThat(category.get(0).getName()).isEqualTo("B");
+		assertThat(category.get().getName()).isEqualTo("B");
 	}
 
 }

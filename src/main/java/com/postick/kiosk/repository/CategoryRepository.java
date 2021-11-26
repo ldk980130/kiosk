@@ -25,11 +25,12 @@ public class CategoryRepository {
 		return category.getId();
 	}
 
-	public List<Category> findByName(String name) {
+	public Optional<Category> findByName(String name) {
 
 		return em.createQuery("select c from Category c where c.name =: name", Category.class)
 			.setParameter("name", name)
-			.getResultList();
+			.getResultStream()
+			.findFirst();
 	}
 
 	public List<Category> findAll() {
