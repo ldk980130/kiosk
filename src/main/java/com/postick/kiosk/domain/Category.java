@@ -17,7 +17,8 @@ import lombok.Getter;
 @Getter
 public class Category {
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "category_id")
 	private Long id;
 
