@@ -31,19 +31,19 @@ public class OrderRepositoryTest {
 	@Test
 	public void saveOrder() throws Exception {
 		//given
-		Category coffeeCategory = Category.create("커피");
-		Category teaCategory = Category.create("차");
-		Category dessertCategory = Category.create("디저트");
+		Category coffeeCategory = Category.create("X");
+		Category teaCategory = Category.create("Y");
+		Category dessertCategory = Category.create("Z");
 		categoryRepository.save(coffeeCategory);
 		categoryRepository.save(teaCategory);
 		categoryRepository.save(dessertCategory);
 
-		Item americano = Item.create(coffeeCategory, "아메리카노", 3000);
-		Item cafeLatte = Item.create(coffeeCategory, "카페라떼", 3000);
-		Item uza = Item.create(teaCategory, "유자차", 3000);
-		Item greenTea = Item.create(teaCategory, "녹차", 3000);
-		Item cake = Item.create(dessertCategory, "케이크", 3000);
-		Item croffle = Item.create(dessertCategory, "크로플", 3000);
+		Item americano = Item.create(coffeeCategory, "ame", 3000);
+		Item cafeLatte = Item.create(coffeeCategory, "cafe", 3000);
+		Item uza = Item.create(teaCategory, "uza", 3000);
+		Item greenTea = Item.create(teaCategory, "green", 3000);
+		Item cake = Item.create(dessertCategory, "cake", 3000);
+		Item croffle = Item.create(dessertCategory, "croffle", 3000);
 
 		//when
 		List<OrderItem> list = new ArrayList<>();
