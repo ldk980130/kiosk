@@ -20,9 +20,10 @@ public class CategoryRepository {
 	private final EntityManager em;
 
 	@Transactional
-	public Long save(Category category) {
+	public Category save(String name) {
+		Category category = Category.create(name);
 		em.persist(category);
-		return category.getId();
+		return category;
 	}
 
 	public Optional<Category> findByName(String name) {

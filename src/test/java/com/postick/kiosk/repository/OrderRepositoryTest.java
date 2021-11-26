@@ -31,19 +31,16 @@ public class OrderRepositoryTest {
 	@Test
 	public void saveOrder() throws Exception {
 		//given
-		Category coffeeCategory = Category.create("X");
-		Category teaCategory = Category.create("Y");
-		Category dessertCategory = Category.create("Z");
-		categoryRepository.save(coffeeCategory);
-		categoryRepository.save(teaCategory);
-		categoryRepository.save(dessertCategory);
+		Category x = categoryRepository.save("X");
+		Category y = categoryRepository.save("Y");
+		Category z = categoryRepository.save("Z");
 
-		Item americano = Item.create(coffeeCategory, "ame", 3000);
-		Item cafeLatte = Item.create(coffeeCategory, "cafe", 3000);
-		Item uza = Item.create(teaCategory, "uza", 3000);
-		Item greenTea = Item.create(teaCategory, "green", 3000);
-		Item cake = Item.create(dessertCategory, "cake", 3000);
-		Item croffle = Item.create(dessertCategory, "croffle", 3000);
+		Item americano = Item.create(x, "ame", 3000);
+		Item cafeLatte = Item.create(x, "cafe", 3000);
+		Item uza = Item.create(y, "uza", 3000);
+		Item greenTea = Item.create(y, "green", 3000);
+		Item cake = Item.create(z, "cake", 3000);
+		Item croffle = Item.create(z, "croffle", 3000);
 
 		//when
 		List<OrderItem> list = new ArrayList<>();
@@ -51,8 +48,7 @@ public class OrderRepositoryTest {
 		list.add(OrderItem.create(uza, 1));
 		list.add(OrderItem.create(cake, 1));
 
-		Order order = Order.create(list);
-		orderRepository.save(order);
+		Order order = orderRepository.save(list);
 
 		//then
 		Order findOrder = orderRepository.findAll().get(0);

@@ -27,8 +27,7 @@ public class ItemRepositoryTest {
 	@Test
 	public void saveItem() throws Exception {
 		//given
-		Category category = Category.create("A");
-		categoryRepository.save(category);
+		categoryRepository.save("A");
 
 		//when
 		Category findCategory = categoryRepository.findByName("A").get();
@@ -44,13 +43,11 @@ public class ItemRepositoryTest {
 		//given
 		int beforeSize = itemRepository.findAll().size();
 
-		Category category1 = Category.create("A");
-		categoryRepository.save(category1);
+		Category category1 = categoryRepository.save("A");
 
 		Item.create(category1, "a", 1500);
 
-		Category category2 = Category.create("B");
-		categoryRepository.save(category2);
+		Category category2 = categoryRepository.save("B");
 
 		Item.create(category2, "b", 1500);
 

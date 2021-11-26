@@ -27,9 +27,9 @@ public class CategoryRepositoryTest {
 	@Test(expected = DataIntegrityViolationException.class)
 	public void nameUnique() throws Exception {
 		//given
-		categoryRepository.save(Category.create("abc"));
+		categoryRepository.save("abc");
 		//when
-		categoryRepository.save(Category.create("abc"));
+		categoryRepository.save("abc");
 
 		//then
 		fail();
@@ -38,9 +38,9 @@ public class CategoryRepositoryTest {
 	@Test
 	public void findByName() throws Exception {
 		//given
-		categoryRepository.save(Category.create("A"));
-		categoryRepository.save(Category.create("B"));
-		categoryRepository.save(Category.create("C"));
+		categoryRepository.save("A");
+		categoryRepository.save("B");
+		categoryRepository.save("C");
 
 		//when
 		Optional<Category> category = categoryRepository.findByName("B");

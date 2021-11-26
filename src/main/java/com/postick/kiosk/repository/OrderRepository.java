@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.postick.kiosk.domain.Order;
+import com.postick.kiosk.domain.OrderItem;
 
 import lombok.RequiredArgsConstructor;
 
@@ -19,9 +20,10 @@ public class OrderRepository {
 	private final EntityManager em;
 
 	@Transactional
-	public Long save(Order order) {
+	public Order save(List<OrderItem> orderItems) {
+		Order order = Order.create(orderItems);
 		em.persist(order);
-		return order.getId();
+		return order;
 	}
 
 	public Order findById(Long id) {
