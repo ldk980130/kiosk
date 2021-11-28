@@ -31,11 +31,13 @@ public class ItemRepositoryTest {
 
 		//when
 		Category findCategory = categoryRepository.findByName("A").get();
+
+		int beforeSize = itemRepository.findAll().size();
 		Item item = itemRepository.save(findCategory, "a", 3000);
+		int afterSize = itemRepository.findAll().size();
 
 		//then
-		List<Item> items = itemRepository.findAll();
-		assertThat(items.get(0).getName()).isEqualTo("a");
+		assertThat(beforeSize + 1).isEqualTo(afterSize);
 	}
 
 	@Test
