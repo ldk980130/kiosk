@@ -18,6 +18,9 @@ import com.postick.kiosk.domain.Category;
 import com.postick.kiosk.domain.Item;
 import com.postick.kiosk.domain.Order;
 import com.postick.kiosk.domain.OrderItem;
+import com.postick.kiosk.domain.Request;
+import com.postick.kiosk.domain.option.Size;
+import com.postick.kiosk.domain.option.Temperature;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -44,9 +47,9 @@ public class OrderRepositoryTest {
 
 		//when
 		List<OrderItem> list = new ArrayList<>();
-		list.add(OrderItem.create(americano, 2));
-		list.add(OrderItem.create(uza, 1));
-		list.add(OrderItem.create(cake, 1));
+		list.add(OrderItem.create(americano, 2, Request.create(Size.REGULAR, Temperature.ICE, "")));
+		list.add(OrderItem.create(uza, 1, Request.create(Size.REGULAR, Temperature.ICE, "")));
+		list.add(OrderItem.create(cake, 1, Request.create(Size.REGULAR, Temperature.ICE, "")));
 
 		int beforeSize = orderRepository.findAll().size();
 		Order order = orderRepository.save(list, true);

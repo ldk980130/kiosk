@@ -1,5 +1,6 @@
 package com.postick.kiosk.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -35,7 +36,7 @@ public class OrderItem {
 	@JoinColumn(name = "order_id")
 	private Order order;
 
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "request_id")
 	private Request request;
 
@@ -44,12 +45,13 @@ public class OrderItem {
 		order.getOrderItems().add(this);
 	}
 
-	public static OrderItem create(Item item, int count) {
+	public static OrderItem create(Item item, int count, Request request) {
 
 		OrderItem orderItem = new OrderItem();
 		orderItem.item = item;
 		orderItem.orderPrice = item.getPrice() * count;
 		orderItem.count = count;
+		orderItem.request = request;
 
 		return orderItem;
 	}
