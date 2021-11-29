@@ -10,6 +10,9 @@ import org.springframework.stereotype.Component;
 import com.postick.kiosk.domain.Category;
 import com.postick.kiosk.domain.Item;
 import com.postick.kiosk.domain.OrderItem;
+import com.postick.kiosk.domain.Request;
+import com.postick.kiosk.domain.option.Size;
+import com.postick.kiosk.domain.option.Temperature;
 import com.postick.kiosk.repository.CategoryRepository;
 import com.postick.kiosk.repository.ItemRepository;
 import com.postick.kiosk.repository.OrderRepository;
@@ -37,14 +40,10 @@ public class TestDataInit {
 		Category juice = categoryRepository.save(JUICE);
 		Category bakery = categoryRepository.save(BAKERY);
 
-		Item americanoH = itemRepository.save(coffee, "아메리카노(HOT)", 3700);
-		Item americanoI = itemRepository.save(coffee, "아메리카노(ICE)", 3700);
-		Item cafeLatteH = itemRepository.save(coffee, "카페라떼(HOT)", 4000);
-		Item cafeLatteI = itemRepository.save(coffee, "카페라떼(ICE)", 4000);
-		Item cafeMochaH = itemRepository.save(coffee, "카페모카(HOT)", 4300);
-		Item cafeMochaI = itemRepository.save(coffee, "카페모카(ICE)", 4300);
-		Item hazelnutH = itemRepository.save(coffee, "헤이즐넛 라떼(HOT)", 4300);
-		Item hazelnutI = itemRepository.save(coffee, "헤이즐넛 라떼(ICE)", 4300);
+		Item americano = itemRepository.save(coffee, "아메리카노", 3700);
+		Item cafeLatte = itemRepository.save(coffee, "카페라떼", 4000);
+		Item cafeMocha = itemRepository.save(coffee, "카페모카", 4300);
+		Item hazelnut = itemRepository.save(coffee, "헤이즐넛 라떼", 4300);
 
 		Item citron = itemRepository.save(tea, "유자차", 3300);
 		Item greenTea = itemRepository.save(tea, "녹차", 3300);
@@ -54,5 +53,12 @@ public class TestDataInit {
 
 		Item cake = itemRepository.save(bakery, "케이크", 5500);
 		Item croffle = itemRepository.save(bakery, "크로플", 5000);
+
+		List<OrderItem> list = new ArrayList<>();
+		list.add(OrderItem.create(americano, 2, Request.create(Size.REGULAR, Temperature.ICE, "")));
+		list.add(OrderItem.create(citron, 1, Request.create(Size.REGULAR, Temperature.HOT, "물 적게")));
+		list.add(OrderItem.create(cake, 1, Request.create(Size.NOTHING, Temperature.NOTHING, "")));
+
+		orderRepository.save(list, true);
 	}
 }
