@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import lombok.Getter;
 
@@ -33,6 +34,10 @@ public class OrderItem {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "order_id")
 	private Order order;
+
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "request_id")
+	private Request request;
 
 	public void setOrder(Order order) {
 		this.order = order;
