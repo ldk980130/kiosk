@@ -54,5 +54,6 @@ public class OrderRepositoryTest {
 
 		//then
 		assertThat(beforeSize + 1).isEqualTo(afterSize);
+		assertThat(order.getOrderItems().size()).isEqualTo(3);
 	}
 }
