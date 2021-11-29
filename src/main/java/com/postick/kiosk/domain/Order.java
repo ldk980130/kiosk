@@ -30,10 +30,13 @@ public class Order {
 
 	private String orderDate;
 
+	@Column(nullable = false)
+	private Boolean takeOut;
+
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 	private List<OrderItem> orderItems = new ArrayList<>();
 
-	public static Order create(List<OrderItem> orderItems) {
+	public static Order create(List<OrderItem> orderItems, boolean takeOut) {
 
 		Order order = new Order();
 		order.totalPrice = 0;
@@ -44,6 +47,8 @@ public class Order {
 		}
 
 		order.orderDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+
+		order.takeOut = takeOut;
 
 		return order;
 	}

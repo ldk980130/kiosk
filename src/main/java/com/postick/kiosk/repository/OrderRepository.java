@@ -20,8 +20,8 @@ public class OrderRepository {
 	private final EntityManager em;
 
 	@Transactional
-	public Order save(List<OrderItem> orderItems) {
-		Order order = Order.create(orderItems);
+	public Order save(List<OrderItem> orderItems, boolean takeOut) {
+		Order order = Order.create(orderItems, takeOut);
 		em.persist(order);
 		return order;
 	}

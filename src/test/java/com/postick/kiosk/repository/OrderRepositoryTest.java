@@ -49,7 +49,7 @@ public class OrderRepositoryTest {
 		list.add(OrderItem.create(cake, 1));
 
 		int beforeSize = orderRepository.findAll().size();
-		Order order = orderRepository.save(list);
+		Order order = orderRepository.save(list, true);
 		int afterSize = orderRepository.findAll().size();
 
 		//then
