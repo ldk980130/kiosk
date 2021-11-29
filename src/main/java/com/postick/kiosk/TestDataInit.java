@@ -54,17 +54,5 @@ public class TestDataInit {
 
 		Item cake = itemRepository.save(bakery, "케이크", 5500);
 		Item croffle = itemRepository.save(bakery, "크로플", 5000);
-
-		List<OrderItem> list = new ArrayList<>();
-		list.add(OrderItem.create(americanoH, 2));
-		list.add(OrderItem.create(cafeLatteI, 1));
-		list.add(OrderItem.create(citron, 1));
-		list.add(OrderItem.create(greenTea, 1));
-		list.add(OrderItem.create(berrySmoothie, 2));
-		list.add(OrderItem.create(yogurtSmoothie, 1));
-		list.add(OrderItem.create(cake, 1));
-		list.add(OrderItem.create(croffle, 1));
-
-		orderRepository.save(list);
 	}
 }
