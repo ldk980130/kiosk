@@ -1,5 +1,6 @@
 package com.postick.kiosk.repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -7,8 +8,10 @@ import javax.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.postick.kiosk.domain.Item;
 import com.postick.kiosk.domain.Order;
 import com.postick.kiosk.domain.OrderItem;
+import com.postick.kiosk.domain.dto.OrderItemDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,9 +21,18 @@ import lombok.RequiredArgsConstructor;
 public class OrderRepository {
 
 	private final EntityManager em;
+	private final ItemRepository itemRepository;
 
 	@Transactional
-	public Order save(List<OrderItem> orderItems, boolean takeOut) {
+	public Order save(List<OrderItemDto> dtos, boolean takeOut) {
+
+		List<OrderItem> orderItems = new ArrayList<>();
+
+		for (OrderItemDto dto : dtos) {
+			Item item = itemRepository.findByName(dto.getItemName()).get();
+			orderItems.add(dto.toEntity(item));
+		}
+
 		Order order = Order.create(orderItems, takeOut);
 		em.persist(order);
 		return order;

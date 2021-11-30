@@ -19,6 +19,7 @@ import com.postick.kiosk.domain.Item;
 import com.postick.kiosk.domain.Order;
 import com.postick.kiosk.domain.OrderItem;
 import com.postick.kiosk.domain.Request;
+import com.postick.kiosk.domain.dto.OrderItemDto;
 import com.postick.kiosk.domain.option.Size;
 import com.postick.kiosk.domain.option.Temperature;
 
@@ -46,10 +47,22 @@ public class OrderRepositoryTest {
 		Item croffle = Item.create(z, "croffle", 3000);
 
 		//when
-		List<OrderItem> list = new ArrayList<>();
-		list.add(OrderItem.create(americano, 2, Request.create(Size.REGULAR, Temperature.ICE, "")));
-		list.add(OrderItem.create(uza, 1, Request.create(Size.REGULAR, Temperature.ICE, "")));
-		list.add(OrderItem.create(cake, 1, Request.create(Size.REGULAR, Temperature.ICE, "")));
+		List<OrderItemDto> list = new ArrayList<>();
+		list.add(OrderItemDto.builder()
+			.itemName("ame")
+			.count(2)
+			.size(Size.REGULAR)
+			.temperature(Temperature.ICE)
+			.content("")
+			.build());
+
+		list.add(OrderItemDto.builder()
+			.itemName("cafe")
+			.count(1)
+			.size(Size.REGULAR)
+			.temperature(Temperature.ICE)
+			.content("")
+			.build());
 
 		int beforeSize = orderRepository.findAll().size();
 		Order order = orderRepository.save(list, true);
@@ -57,6 +70,7 @@ public class OrderRepositoryTest {
 
 		//then
 		assertThat(beforeSize + 1).isEqualTo(afterSize);
-		assertThat(order.getOrderItems().size()).isEqualTo(3);
+		assertThat(order.getOrderItems().size()).isEqualTo(2);
+		assertThat(order.getTotalPrice()).isEqualTo(9000);
 	}
 }

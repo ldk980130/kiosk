@@ -1,6 +1,7 @@
 package com.postick.kiosk.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.EntityManager;
 
@@ -27,6 +28,14 @@ public class ItemRepository {
 
 	public Item findById(Long id) {
 		return em.find(Item.class, id);
+	}
+
+	public Optional<Item> findByName(String name) {
+		return em.createQuery("select i from Item i "
+			+ "where i.name =: name")
+			.setParameter("name", name)
+			.getResultStream()
+			.findFirst();
 	}
 
 	public List<Item> findAll(){

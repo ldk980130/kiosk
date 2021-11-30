@@ -54,11 +54,5 @@ public class TestDataInit {
 		Item cake = itemRepository.save(bakery, "케이크", 5500);
 		Item croffle = itemRepository.save(bakery, "크로플", 5000);
 
-		List<OrderItem> list = new ArrayList<>();
-		list.add(OrderItem.create(americano, 2, Request.create(Size.REGULAR, Temperature.ICE, "")));
-		list.add(OrderItem.create(citron, 1, Request.create(Size.REGULAR, Temperature.HOT, "물 적게")));
-		list.add(OrderItem.create(cake, 1, Request.create(Size.NOTHING, Temperature.NOTHING, "")));
-
-		orderRepository.save(list, true);
 	}
 }
