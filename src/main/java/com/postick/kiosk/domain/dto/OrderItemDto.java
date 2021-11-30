@@ -9,9 +9,10 @@ import com.postick.kiosk.domain.option.Size;
 import com.postick.kiosk.domain.option.Temperature;
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Setter @Getter
 public class OrderItemDto {
 
 	@NotEmpty
@@ -21,6 +22,9 @@ public class OrderItemDto {
 	private Size size;
 	private Temperature temperature;
 	private String content;
+
+	public OrderItemDto() {
+	}
 
 	@Builder
 	public OrderItemDto(String itemName, Integer count, Size size, Temperature temperature, String content) {
