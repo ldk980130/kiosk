@@ -7,9 +7,11 @@ import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.postick.kiosk.domain.Order;
+import com.postick.kiosk.domain.dto.OrderForm;
 import com.postick.kiosk.domain.dto.OrderItemDto;
 import com.postick.kiosk.repository.OrderRepository;
 
@@ -24,16 +26,21 @@ public class HomeController {
 	private final OrderRepository orderRepository;
 
 	@ResponseBody
-	@PostMapping("/api-test")
-	public String test(@RequestBody OrderItemDto orderItemDto) {
-		log.info("itemName={}", orderItemDto.getItemName());
-		log.info("option={}", orderItemDto.getSize());
-		log.info("option={}", orderItemDto.getTemperature());
+	@PostMapping("/")
+	public List<OrderForm> test(@RequestBody Map<String, List<OrderItemDto>> data,
+		@RequestParam(value = "take-out") boolean takeOut) {
 
-		List<OrderItemDto> list = new ArrayList<>();
-		list.add(orderItemDto);
-		orderRepository.save(list, true);
+		List<OrderItemDto> orderItems = data.get("orderItems");
 
-		return "ok";
+		orderRepository.save(orderItems, takeOut);
+
+		List<Order> orderList = orderRepository.findAll();
+		List<OrderForm> orderFormList = new ArrayList<>();
+
+		for (Order order : orderList) {
+			orderFormList.add(order.toOrderForm());
+		}
+
+		return orderFormList;
 	}
 }
