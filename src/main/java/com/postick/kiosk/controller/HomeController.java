@@ -27,7 +27,7 @@ public class HomeController {
 
 	@ResponseBody
 	@PostMapping("/")
-	public List<OrderDto> test(@RequestBody Map<String, List<OrderItemDto>> data,
+	public List<OrderDto> order(@RequestBody Map<String, List<OrderItemDto>> data,
 		@RequestParam(value = "take-out") boolean takeOut) {
 
 		List<OrderItemDto> orderItems = data.get("orderItems");
@@ -38,7 +38,7 @@ public class HomeController {
 		List<OrderDto> orderDtoList = new ArrayList<>();
 
 		for (Order order : orderList) {
-			orderDtoList.add(order.toOrderForm());
+			orderDtoList.add(order.toOrderDto());
 		}
 
 		return orderDtoList;

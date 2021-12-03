@@ -7,12 +7,14 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.postick.kiosk.controller.BooleanToYNConverter;
 import com.postick.kiosk.domain.dto.OrderDto;
 
 import lombok.Getter;
@@ -33,6 +35,7 @@ public class Order {
 	private String orderDate;
 
 	@Column(nullable = false)
+	@Convert(converter = BooleanToYNConverter.class)
 	private Boolean takeOut;
 
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
@@ -55,7 +58,7 @@ public class Order {
 		return order;
 	}
 
-	public OrderDto toOrderForm() {
+	public OrderDto toOrderDto() {
 		return OrderDto.builder()
 			.id(this.id)
 			.totalPrice(this.totalPrice)
