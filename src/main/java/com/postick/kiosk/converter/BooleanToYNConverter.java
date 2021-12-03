@@ -1,4 +1,4 @@
-package com.postick.kiosk.controller;
+package com.postick.kiosk.converter;
 
 import javax.persistence.AttributeConverter;
 

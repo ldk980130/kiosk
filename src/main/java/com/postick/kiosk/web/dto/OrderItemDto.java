@@ -1,4 +1,4 @@
-package com.postick.kiosk.domain.dto;
+package com.postick.kiosk.web.dto;
 
 import javax.validation.constraints.NotEmpty;
 

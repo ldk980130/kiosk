@@ -14,8 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.postick.kiosk.controller.BooleanToYNConverter;
-import com.postick.kiosk.domain.dto.OrderDto;
+import com.postick.kiosk.converter.BooleanToYNConverter;
+import com.postick.kiosk.web.dto.OrderDto;
 
 import lombok.Getter;
 

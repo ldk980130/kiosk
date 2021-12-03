@@ -1,12 +1,10 @@
 package com.postick.kiosk.repository;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.postick.kiosk.domain.Category;
 import com.postick.kiosk.domain.Item;
 import com.postick.kiosk.domain.Order;
-import com.postick.kiosk.domain.OrderItem;
-import com.postick.kiosk.domain.Request;
-import com.postick.kiosk.domain.dto.OrderItemDto;
+import com.postick.kiosk.web.dto.OrderItemDto;
 import com.postick.kiosk.domain.option.Size;
 import com.postick.kiosk.domain.option.Temperature;
 

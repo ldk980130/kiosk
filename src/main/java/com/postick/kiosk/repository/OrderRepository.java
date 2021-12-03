@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.postick.kiosk.domain.Item;
 import com.postick.kiosk.domain.Order;
 import com.postick.kiosk.domain.OrderItem;
-import com.postick.kiosk.domain.dto.OrderItemDto;
+import com.postick.kiosk.web.dto.OrderItemDto;
 
 import lombok.RequiredArgsConstructor;
 

@@ -1,4 +1,4 @@
-package com.postick.kiosk.controller;
+package com.postick.kiosk.web;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.postick.kiosk.domain.Order;
-import com.postick.kiosk.domain.dto.OrderDto;
-import com.postick.kiosk.domain.dto.OrderItemDto;
+import com.postick.kiosk.web.dto.OrderDto;
+import com.postick.kiosk.web.dto.OrderItemDto;
 import com.postick.kiosk.repository.OrderRepository;
 
 import lombok.RequiredArgsConstructor;
