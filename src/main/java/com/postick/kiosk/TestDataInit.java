@@ -1,18 +1,11 @@
 package com.postick.kiosk;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Component;
 
 import com.postick.kiosk.domain.Category;
 import com.postick.kiosk.domain.Item;
-import com.postick.kiosk.domain.OrderItem;
-import com.postick.kiosk.domain.Request;
-import com.postick.kiosk.domain.option.Size;
-import com.postick.kiosk.domain.option.Temperature;
 import com.postick.kiosk.repository.CategoryRepository;
 import com.postick.kiosk.repository.ItemRepository;
 import com.postick.kiosk.repository.OrderRepository;

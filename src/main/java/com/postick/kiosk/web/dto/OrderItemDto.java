@@ -12,17 +12,24 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * 웹으로부터 주문상품 정보를 받아오는 OrderItem의 Dto 클래스.
+ */
+
 @Setter @Getter
 public class OrderItemDto {
 
 	@NotEmpty
-	private String itemName;
+	private String itemName; // 상품 이름
 	@NotEmpty
-	private Integer count;
-	private Size size;
-	private Temperature temperature;
-	private String content;
+	private Integer count; // 주문 수량
+	private Size size; // 사이즈
+	private Temperature temperature; // 온도
+	private String content; // 구체적인 요청사항
 
+	/**
+	 * 생성자
+	 */
 	public OrderItemDto() {
 	}
 
@@ -35,6 +42,9 @@ public class OrderItemDto {
 		this.content = content;
 	}
 
+	/**
+	 * Dto 클래스를 DB에 저장하기 위한 엔티티 클래스로 변환하는 메소드
+	 */
 	public OrderItem toEntity(Item item) {
 		return OrderItem.create(item, count,
 			Request.create(size, temperature, content));

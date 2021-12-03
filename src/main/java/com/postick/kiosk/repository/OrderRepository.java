@@ -15,14 +15,22 @@ import com.postick.kiosk.web.dto.OrderItemDto;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * 주문 테이블에 접근할 수 있는 Repository 클래스
+ */
+
 @Repository
 @RequiredArgsConstructor
-@Transactional(readOnly = true)
 public class OrderRepository {
 
-	private final EntityManager em;
-	private final ItemRepository itemRepository;
+	private final EntityManager em; // // DB에 접근할 수 있는 엔티티 매니저
+	private final ItemRepository itemRepository; // 주문되는 상품을 찾아오기 위한 상품 테이블 접근 repository
 
+	/**
+	 * 주문을 저장하는 메소드
+	 * 여러 개의 주문상품과 테이크아웃 여부를 받아 주문 테이블에 저장한다.
+	 * @Transactional 애노테이션 : 이 메소드가 한 트랜잭션 안에서 수행되어야 함을 의미
+	 */
 	@Transactional
 	public Order save(List<OrderItemDto> dtos, boolean takeOut) {
 
@@ -35,13 +43,14 @@ public class OrderRepository {
 
 		Order order = Order.create(orderItems, takeOut);
 		em.persist(order);
+
 		return order;
 	}
 
-	public Order findById(Long id) {
-		return em.find(Order.class, id);
-	}
-
+	/**
+	 * 모든 주문을 조회하는 메소드
+	 * JPQL을 사용해 모든 Category 객체를 가져올 수 있다.
+	 */
 	public List<Order> findAll() {
 		return em.createQuery("select o from Order o", Order.class)
 			.getResultList();
