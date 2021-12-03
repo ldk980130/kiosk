@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.postick.kiosk.domain.Order;
-import com.postick.kiosk.domain.dto.OrderForm;
+import com.postick.kiosk.domain.dto.OrderDto;
 import com.postick.kiosk.domain.dto.OrderItemDto;
 import com.postick.kiosk.repository.OrderRepository;
 
@@ -27,7 +27,7 @@ public class HomeController {
 
 	@ResponseBody
 	@PostMapping("/")
-	public List<OrderForm> test(@RequestBody Map<String, List<OrderItemDto>> data,
+	public List<OrderDto> test(@RequestBody Map<String, List<OrderItemDto>> data,
 		@RequestParam(value = "take-out") boolean takeOut) {
 
 		List<OrderItemDto> orderItems = data.get("orderItems");
@@ -35,12 +35,12 @@ public class HomeController {
 		orderRepository.save(orderItems, takeOut);
 
 		List<Order> orderList = orderRepository.findAll();
-		List<OrderForm> orderFormList = new ArrayList<>();
+		List<OrderDto> orderDtoList = new ArrayList<>();
 
 		for (Order order : orderList) {
-			orderFormList.add(order.toOrderForm());
+			orderDtoList.add(order.toOrderForm());
 		}
 
-		return orderFormList;
+		return orderDtoList;
 	}
 }

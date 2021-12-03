@@ -13,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.postick.kiosk.domain.dto.OrderForm;
+import com.postick.kiosk.domain.dto.OrderDto;
 
 import lombok.Getter;
 
@@ -55,8 +55,8 @@ public class Order {
 		return order;
 	}
 
-	public OrderForm toOrderForm() {
-		return OrderForm.builder()
+	public OrderDto toOrderForm() {
+		return OrderDto.builder()
 			.id(this.id)
 			.totalPrice(this.totalPrice)
 			.orderDate(this.orderDate)

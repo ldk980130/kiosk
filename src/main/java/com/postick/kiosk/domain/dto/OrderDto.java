@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class OrderForm {
+public class OrderDto {
 
 	private Long id;
 	private int totalPrice;
@@ -13,7 +13,7 @@ public class OrderForm {
 	private boolean takeOut;
 
 	@Builder
-	public OrderForm(Long id, int totalPrice, String orderDate, boolean takeOut) {
+	public OrderDto(Long id, int totalPrice, String orderDate, boolean takeOut) {
 		this.id = id;
 		this.totalPrice = totalPrice;
 		this.orderDate = orderDate;
