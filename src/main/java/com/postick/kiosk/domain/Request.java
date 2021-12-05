@@ -21,6 +21,8 @@ import lombok.Getter;
 @Getter
 public class Request {
 
+	private static final String NO_CONTENT = "없음";
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "request_id")
@@ -39,9 +41,9 @@ public class Request {
 	 */
 	public static Request create(Size size, Temperature temperature, String content) {
 		Request request = new Request();
-		request.size = size;
-		request.temperature = temperature;
-		request.content = content;
+		request.size = (size != null) ? size : Size.NOTHING;
+		request.temperature = (temperature != null) ? temperature : Temperature.NOTHING;
+		request.content = (content != null) ? content : NO_CONTENT;
 		return request;
 	}
 }
