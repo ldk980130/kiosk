@@ -33,18 +33,20 @@ public class OrderRepository {
 	 */
 	@Transactional
 	public Order save(List<OrderItemDto> dtos, boolean takeOut) {
-
 		List<OrderItem> orderItems = new ArrayList<>();
 
-		for (OrderItemDto dto : dtos) {
-			Item item = itemRepository.findByName(dto.getItemName()).get();
-			orderItems.add(dto.toEntity(item));
-		}
+		dtos.stream().
+			forEach(d -> addOrderItemToList(orderItems, d));
 
 		Order order = Order.create(orderItems, takeOut);
 		em.persist(order);
 
 		return order;
+	}
+
+	private void addOrderItemToList(List<OrderItem> orderItems, OrderItemDto dto) {
+		Item item = itemRepository.findByName(dto.getItemName()).get();
+		orderItems.add(dto.toEntity(item));
 	}
 
 	/**
