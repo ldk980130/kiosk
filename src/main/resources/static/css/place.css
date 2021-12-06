@@ -7,7 +7,7 @@
 .main-container{
     width: 100vw;
     height: 100vh;
-    background-image: url('../../templates/cafe.png');
+    background-image: url('../img/cafe.png');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
