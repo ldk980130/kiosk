@@ -1,6 +1,21 @@
 package com.postick.kiosk.domain.option;
 
+import java.util.stream.Stream;
+
 public enum Temperature {
 
-	ICE, HOT, NOTHING
+	ICE("ICE"), HOT("HOT"), NOTHING("NOTHING");
+
+	private final String description;
+
+	Temperature(String description) {
+		this.description = description;
+	}
+
+	public static Temperature get(String description) {
+		return Stream.of(Temperature.values())
+			.filter(t -> t.description == description)
+			.findFirst()
+			.orElse(null);
+	}
 }

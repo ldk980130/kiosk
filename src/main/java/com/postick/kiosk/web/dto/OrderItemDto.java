@@ -23,8 +23,8 @@ public class OrderItemDto {
 	private String itemName; // 상품 이름
 	@NotEmpty
 	private Integer count; // 주문 수량
-	private Size size; // 사이즈
-	private Temperature temperature; // 온도
+	private String size; // 사이즈
+	private String temperature; // 온도
 	private String content; // 구체적인 요청사항
 
 	/**
@@ -34,7 +34,7 @@ public class OrderItemDto {
 	}
 
 	@Builder
-	public OrderItemDto(String itemName, Integer count, Size size, Temperature temperature, String content) {
+	public OrderItemDto(String itemName, Integer count, String size, String temperature, String content) {
 		this.itemName = itemName;
 		this.count = count;
 		this.size = size;
@@ -47,7 +47,7 @@ public class OrderItemDto {
 	 */
 	public OrderItem toEntity(Item item) {
 		return OrderItem.create(item, count,
-			Request.create(size, temperature, content));
+			Request.create(Size.get(size), Temperature.get(temperature), content));
 	}
 
 }

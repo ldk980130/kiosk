@@ -32,12 +32,12 @@ public class HomeController {
 	}
 
 	@PostMapping("/")
-	public String order(@RequestBody Map<String, List<OrderItemDto>> data,
-		@RequestParam(value = "take-out") boolean takeOut) {
+	public String order(@RequestBody Map<String, List<OrderItemDto>> data) {
+		log.info("주문 컨트롤러 호출");
 
 		List<OrderItemDto> orderItems = data.get("orderItems");
 
-		orderRepository.save(orderItems, takeOut);
+		orderRepository.save(orderItems, true);
 
 		return "redirect:/";
 	}
