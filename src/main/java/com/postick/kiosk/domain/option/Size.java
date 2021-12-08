@@ -4,7 +4,7 @@ import java.util.stream.Stream;
 
 public enum Size {
 
-	REGULAR("REGULAR"), LARGE("LARGE"), NOTHING("NOTHING");
+	REGULAR("Regular"), LARGE("Large"), NOTHING("NOTHING");
 
 	private final String description;
 
@@ -14,7 +14,7 @@ public enum Size {
 
 	public static Size get(String description) {
 		return Stream.of(Size.values())
-			.filter(s -> s.description == description)
+			.filter(s -> s.description.equals(description))
 			.findFirst()
 			.orElse(null);
 	}

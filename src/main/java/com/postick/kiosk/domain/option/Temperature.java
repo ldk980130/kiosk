@@ -14,7 +14,7 @@ public enum Temperature {
 
 	public static Temperature get(String description) {
 		return Stream.of(Temperature.values())
-			.filter(t -> t.description == description)
+			.filter(t -> t.description.equals(description))
 			.findFirst()
 			.orElse(null);
 	}
