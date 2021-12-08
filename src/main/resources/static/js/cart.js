@@ -60,9 +60,9 @@
                                             <div><i class='fa fa-dollar total-cart-cost'>0</i></div>\n\
                                             </div>\n\
                                             <div class='cart-checkout'>\n\
-                                            <form action='order=success' method ='post'>\n\
+                                            <div>\n\
                                                 <button type='submit' class='btn btn-primary' id='send-to-server'>주문하기</button>\n\
-                                            </form>\n\
+                                            </div>\n\
                                         </div>\n\
                                  </div>");
         },
@@ -239,15 +239,16 @@
 
     console.log('result: ', result)
 
-    // 주문 데이터 서버로 전송
-    $('#send-to-server').click(function(e) {
-        e.preventDefault();
+    $('#send-to-server').on('click', function(e) {
         $.ajax({
-            url: 'localhost:8080/',
+            url: 'https://localhost:8080/',
+            headers: {'Content-Type': 'application/json'},
             // url 추후 확인 부탁드립니다
             data: result,
-            type: 'POST'
-        }).done(function(resp) {
+            dataType : 'JSON',
+            processData : true,
+            type: 'get',
+        }).success(function(resp) {
             alert(resp);
             console.log("전송 완료.")
         })
@@ -258,13 +259,13 @@
         this._saveCart();
     })
 
-    console.log(this.cart)
+    // console.log(this.cart)
 
     $.fn.simpleCart = function (options) {
         return this.each(function () {
             $.data(this, "simpleCart", new simpleCart(this));
             console.log($(this, "simpleCart"));
         });
-    }
-    ;
+    };
+
 })(jQuery, window, document);

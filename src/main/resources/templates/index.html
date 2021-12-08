@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>문화상점 이문일공칠</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type = "text/css" href="../static/css/navbar.css"/>
+        <link href="../static/css/cart.css" rel="stylesheet">
+        <link href="../static/css/order.css" rel="stylesheet">
+        </script>
+    </head>
+    <body>
+        <div class ="navbar">
+            <div class = "logo-container">
+                <img src="../static/img/logo.png" class = "logo"/>
+            </div>
+        </div>
+        <div class = "main-container">
+            <div class="container">
+                <div class="content">
+                  <input type="radio" name="slider" checked id="coffee">
+                  <input type="radio" name="slider" id="tea">
+                  <input type="radio" name="slider" id="juice">
+                  <input type="radio" name="slider" id="bakery">
+                  <div class="list">
+                    <label for="coffee" class="coffee">
+                    <span class="icon"><img src="../static/img/coffee-beans-dark.png" class = "img-dark"/></span>
+                    <br/>
+                    <span class="title">COFFEE</span>
+                  </label>
+                  <label for="tea" class="tea">
+                    <span class="icon"><img src="../static/img/tea-dark.png" class = "img-dark"/></span>
+                    <br/>
+                    <span class="title">TEA</span>
+                  </label>
+                  <label for="juice" class="juice">
+                    <span class="icon"><img src="../static/img/juice-dark.png" class = "img-dark"/></span>
+                    <br/>
+                    <span class="title">JUICE / ADE</span>
+                  </label>
+                  <label for="bakery" class="bakery">
+                    <span class="icon"><img src="../static/img/bread-dark.png" class = "img-dark"/></span>
+                    <br/>
+                    <span class="title">BAKERY</span>
+                  </label>
+                  <div class="slider"></div>
+                </div>
+                <div class="text-content">
+                  <div class="home text">
+                    <div class="title">COFFEE</div>
+                    <div class="menu">
+                        <div class="box" data-name="에스프레소" data-price="2500">
+                            <div class="item-name">
+                                에스프레소
+                            </div>
+                             <div class="item-price-container">
+                                 <div class="item-price">
+                                     <span>2500</span>원
+                                </div>
+                                <div class="spacer"></div>
+                                
+                                <div class="add-button">
+                                    <button class="btn btn-primary sc-add-to-cart" data-name="에스프레소" data-price="2500" type="submit">ADD</button>
+                                </div>
+                           </div>
+                           </div>
+                           <div class="box">
+                            <div class="item-name">
+                                아메리카노
+                            </div>
+                             <div class="item-price-container">
+                                 <div class="item-price">
+                                     <span>3700</span>원
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="add-button">
+                                    <button class="btn btn-primary sc-add-to-cart" data-name="아메리카노" data-price="3700" type="submit">ADD</button>
+                                </div>
+                           </div>
+                           </div>
+                           <div class="box">
+                            <div class="item-name">
+                                카페라떼
+                            </div>
+                             <div class="item-price-container">
+                                 <div class="item-price">
+                                     <span>4000</span>원
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="add-button">
+                                    <button class="btn btn-primary sc-add-to-cart" data-name="카페라떼" data-price="4000" type="submit">ADD</button>
+                                </div>
+                           </div>
+                           </div>
+                           <div class="box">
+                            <div class="item-name">
+                                카푸치노
+                            </div>
+                             <div class="item-price-container">
+                                 <div class="item-price">
+                                     <span>4000</span>원
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="add-button">
+                                    <button class="btn btn-primary sc-add-to-cart" data-name="카푸치노" data-price="4000" type="submit">ADD</button>
+                                </div>
+                           </div>
+                           </div>
+                           <div class="box">
+                            <div class="item-name">
+                                카페모카
+                            </div>
+                             <div class="item-price-container">
+                                 <div class="item-price">
+                                     <span>4300</span>원
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="add-button">
+                                    <button class="btn btn-primary sc-add-to-cart" data-name="카페모카" data-price="4300" type="submit">ADD</button>
+                                </div>
+                           </div>
+                           </div>
+                           <div class="box">
+                            <div class="item-name">
+                                카라멜 마끼아또
+                            </div>
+                             <div class="item-price-container">
+                                 <div class="item-price">
+                                     <span>4300</span>원
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="add-button">
+                                    <button class="btn btn-primary sc-add-to-cart" data-name="카라멜 마끼아또" data-price="4300" type="submit">ADD</button>
+                                </div>
+                           </div>
+                           </div>
+                           <div class="box">
+                            <div class="item-name">
+                                바닐라 라떼
+                            </div>
+                             <div class="item-price-container">
+                                 <div class="item-price">
+                                     <span>4300</span>원
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="add-button">
+                                    <button class="btn btn-primary sc-add-to-cart" data-name="바닐라 라떼" data-price="4300" type="submit">ADD</button>
+                                </div>
+                           </div>
+                           </div>
+                           <div class="box">
+                            <div class="item-name">
+                                헤이즐넛 라떼
+                            </div>
+                             <div class="item-price-container">
+                                 <div class="item-price">
+                                     <span>4300</span>원
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="add-button">
+                                    <button class="btn btn-primary sc-add-to-cart" data-name="헤이즐넛 라떼" data-price="4300" type="submit">ADD</button>
+                                </div>
+                           </div>
+                           </div>
+                        </div>
+                        </div>
+                        <div class="blog text">
+                            <div class="title">TEA</div>
+                            <div class="menu">
+                                <div class="box">
+                                    <div class="item-name">
+                                        유자차
+                                    </div>
+                                     <div class="item-price-container">
+                                         <div class="item-price">
+                                             <span>4500</span>원
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="add-button">
+                                            <button class="btn btn-primary sc-add-to-cart" data-name="유자차" data-price="4500" type="submit">ADD</button>
+                                        </div>
+                                   </div>
+                                   </div>
+                                   <div class="box">
+                                    <div class="item-name">
+                                        허니 레몬티
+                                    </div>
+                                     <div class="item-price-container">
+                                         <div class="item-price">
+                                             <span>4500</span>원
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="add-button">
+                                            <button class="btn btn-primary sc-add-to-cart" data-name="허니 레몬티" data-price="4500" type="submit">ADD</button>
+                                        </div>
+                                   </div>
+                                   </div>
+                                   <div class="box">
+                                    <div class="item-name">
+                                        허니 자몽티
+                                    </div>
+                                     <div class="item-price-container">
+                                         <div class="item-price">
+                                             <span>4500</span>원
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="add-button">
+                                            <button class="btn btn-primary sc-add-to-cart" data-name="허니 자몽티" data-price="4500" type="submit">ADD</button>
+                                        </div>
+                                   </div>
+                                   </div>
+                                   <div class="box">
+                                    <div class="item-name">
+                                        캐모마일티
+                                    </div>
+                                     <div class="item-price-container">
+                                         <div class="item-price">
+                                             <span>4000</span>원
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="add-button">
+                                            <button class="btn btn-primary sc-add-to-cart" data-name="캐모마일티" data-price="4000" type="submit">ADD</button>
+                                        </div>
+                                   </div>
+                                   </div>
+                                   <div class="box">
+                                    <div class="item-name">
+                                        루이보스티
+                                    </div>
+                                     <div class="item-price-container">
+                                         <div class="item-price">
+                                             <span>4000</span>원
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="add-button">
+                                            <button class="btn btn-primary sc-add-to-cart" data-name="루이보스티" data-price="4000" type="submit">ADD</button>
+                                        </div>
+                                   </div>
+                                   
+                                   </div>
+                                   <div class="box">
+                                    <div class="item-name">
+                                        페퍼민트티
+                                    </div>
+                                     <div class="item-price-container">
+                                         <div class="item-price">
+                                             <span>4000</span>원
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="add-button">
+                                            <button class="btn btn-primary sc-add-to-cart" data-name="페퍼민트티" data-price="4000" type="submit">ADD</button>
+                                        </div>
+                                   </div>
+                                   </div>
+                                   <div class="box">
+                                    <div class="item-name">
+                                        얼그레이티
+                                    </div>
+                                     <div class="item-price-container">
+                                         <div class="item-price">
+                                             <span>4000</span>원
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="add-button">
+                                            <button class="btn btn-primary sc-add-to-cart" data-name="얼그레이티" data-price="4000" type="submit">ADD</button>
+                                        </div>
+                                   </div>
+                                   </div>
+                                   <div class="box">
+                                    <div class="item-name">
+                                        녹차
+                                    </div>
+                                     <div class="item-price-container">
+                                         <div class="item-price">
+                                             <span>4000</span>원
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="add-button">
+                                            <button class="btn btn-primary sc-add-to-cart" data-name="녹차" data-price="4000" type="submit">ADD</button>
+                                        </div>
+                                   </div>
+                                   </div>
+                                </div>
+                                </div>
+                                <div class="help text" id="juice">
+                                    <div class="title">JUICE / ADE</div>
+                                    <div class="menu">
+                                        <div class="box">
+                                            <div class="item-name">
+                                                바나나 주스
+                                            </div>
+                                             <div class="item-price-container">
+                                                 <div class="item-price">
+                                                     <span>5500</span>원
+                                                </div>
+                                                <div class="spacer"></div>
+                                                <div class="add-button">
+                                                    <button class="btn btn-primary sc-add-to-cart" data-name="바나나 주스" data-price="5500" type="submit">ADD</button>
+                                                </div>
+                                           </div>
+                                           </div>
+                                           <div class="box">
+                                            <div class="item-name">
+                                                딸기 주스
+                                            </div>
+                                             <div class="item-price-container">
+                                                 <div class="item-price">
+                                                     <span>6000</span>원
+                                                </div>
+                                                <div class="spacer"></div>
+                                                <div class="add-button">
+                                                    <button class="btn btn-primary sc-add-to-cart" data-name="딸기 주스" data-price="6000" type="submit">ADD</button>
+                                                </div>
+                                           </div>
+                                           </div>
+                                           <div class="box">
+                                            <div class="item-name">
+                                                망고 주스
+                                            </div>
+                                             <div class="item-price-container">
+                                                 <div class="item-price">
+                                                     <span>6000</span>원
+                                                </div>
+                                                <div class="spacer"></div>
+                                                <div class="add-button">
+                                                    <button class="btn btn-primary sc-add-to-cart" data-name="망고 주스" data-price="6000" type="submit">ADD</button>
+                                                </div>
+                                           </div>
+                                           </div>
+                                           <div class="box">
+                                            <div class="item-name">
+                                                토마토 주스
+                                            </div>
+                                             <div class="item-price-container">
+                                                 <div class="item-price">
+                                                     <span>6000</span>원
+                                                </div>
+                                                <div class="spacer"></div>
+                                                <div class="add-button">
+                                                    <button class="btn btn-primary sc-add-to-cart" data-name="토마토 주스" data-price="6000" type="submit">ADD</button>
+                                                </div>
+                                           </div>
+                                           </div>
+                                           <div class="box">
+                                            <div class="item-name">
+                                                레몬 에이드
+                                            </div>
+                                             <div class="item-price-container">
+                                                 <div class="item-price">
+                                                     <span>4500</span>원
+                                                </div>
+                                                <div class="spacer"></div>
+                                                <div class="add-button">
+                                                    <button class="btn btn-primary sc-add-to-cart" data-name="레몬 에이드" data-price="4500" type="submit">ADD</button>
+                                                </div>
+                                            </div>
+                                           </div>
+                                           <div class="box">
+                                            <div class="item-name">
+                                                자몽 에이드
+                                            </div>
+                                             <div class="item-price-container">
+                                                 <div class="item-price">
+                                                     <span>4500</span>원
+                                                </div>
+                                                <div class="spacer"></div>
+                                                <div class="add-button">
+                                                    <button class="btn btn-primary sc-add-to-cart" data-name="자몽 에이드" data-price="4500" type="submit">ADD</button>
+                                                </div>
+                                           </div>
+                                           </div>
+                                           <div class="box">
+                                            <div class="item-name">
+                                                블루베리 에이드
+                                            </div>
+                                             <div class="item-price-container">
+                                                 <div class="item-price">
+                                                     <span>4500</span>원
+                                                </div>
+                                                <div class="spacer"></div>
+                                                <div class="add-button">
+                                                    <button class="btn btn-primary sc-add-to-cart" data-name="블루베리 에이드" data-price="4500" type="submit">ADD</button>
+                                                </div>
+                                           </div>
+                                           </div>
+                                           <div class="box">
+                                            <div class="item-name">
+                                                망고 에이드
+                                            </div>
+                                             <div class="item-price-container">
+                                                 <div class="item-price">
+                                                     <span>4500</span>원
+                                                </div>
+                                                <div class="spacer"></div>
+                                                <div class="add-button">
+                                                    <button class="btn btn-primary sc-add-to-cart" data-name="망고 에이드" data-price="4500" type="submit">ADD</button>
+                                                </div>
+                                           </div>
+
+                                           </div>
+                                        </div>
+                                        </div>
+                                        <div class="code text">
+                                            <div class="title">BAKERY</div>
+                                            <div class="menu">
+                                                <div class="box">
+                                                    <div class="item-name">
+                                                        에그 치즈 토스트
+                                                    </div>
+                                                     <div class="item-price-container">
+                                                         <div class="item-price">
+                                                             <span>5500</span>원
+                                                        </div>
+                                                        <div class="spacer"></div>
+                                                        <div class="add-button">
+                                                            <button class="btn btn-primary sc-add-to-cart" data-name="에그 치즈 토스트" data-price="3500" type="submit">ADD</button>
+                                                        </div>
+                                                   </div>
+                                                   </div>
+                                                   <div class="box">
+                                                    <div class="item-name">
+                                                        클럽 샌드위치
+                                                    </div>
+                                                     <div class="item-price-container">
+                                                         <div class="item-price">
+                                                             <span>5000</span>원
+                                                        </div>
+                                                        <div class="spacer"></div>
+                                                        <div class="add-button">
+                                                            <button class="btn btn-primary sc-add-to-cart" data-name="클럽 샌드위치" data-price="5000" type="submit">ADD</button>
+                                                        </div>
+                                                   </div>
+                                                   </div>
+                                                   <div class="box">
+                                                    <div class="item-name">
+                                                        로투스 찹쌀떡
+                                                    </div>
+                                                     <div class="item-price-container">
+                                                         <div class="item-price">
+                                                             <span>4000</span>원
+                                                        </div>
+                                                        <div class="spacer"></div>
+                                                        <div class="add-button">
+                                                            <button class="btn btn-primary sc-add-to-cart" data-name="로투스 찹쌀떡" data-price="4000" type="submit">ADD</button>
+                                                        </div>
+                                                   </div>
+                                                   </div>
+                                                   <div class="box">
+                                                    <div class="item-name">
+                                                        공룡알고구마빵
+                                                    </div>
+                                                     <div class="item-price-container">
+                                                         <div class="item-price">
+                                                             <span>2500</span>원
+                                                        </div>
+                                                        <div class="spacer"></div>
+                                                        <div class="add-button">
+                                                            <button class="btn btn-primary sc-add-to-cart" data-name="공룡알고구마빵" data-price="2500" type="submit">ADD</button>
+                                                        </div>
+                                                   </div>
+                                                   </div>
+                                                   <div class="box">
+                                                    <div class="item-name">
+                                                        말렌카 케이크(허니)
+                                                    </div>
+                                                     <div class="item-price-container">
+                                                         <div class="item-price">
+                                                             <span>4800</span>원
+                                                        </div>
+                                                        <div class="spacer"></div>
+                                                        <div class="add-button">
+                                                            <button class="btn btn-primary sc-add-to-cart" data-name="말렌카 케이크(허니)" data-price="4800" type="submit">ADD</button>
+                                                        </div>
+                                                   </div>
+                                                   </div>
+                                                   <div class="box">
+                                                    <div class="item-name">
+                                                        말렌카 케이크(코코아)
+                                                    </div>
+                                                     <div class="item-price-container">
+                                                         <div class="item-price">
+                                                             <span>4800</span>원
+                                                        </div>
+                                                        <div class="spacer"></div>
+                                                        <div class="add-button">
+                                                            <button class="btn btn-primary sc-add-to-cart" data-name="말렌카 케이크(허니)" data-price="4800" type="submit">ADD</button>
+                                                        </div>
+                                                   </div>
+                                                   </div>
+                                                   <div class="box">
+                                                    <div class="item-name">
+                                                        감자빵
+                                                    </div>
+                                                     <div class="item-price-container">
+                                                         <div class="item-price">
+                                                             <span>2500</span>원
+                                                        </div>
+                                                        <div class="spacer"></div>
+                                                        <div class="add-button">
+                                                            <button class="btn btn-primary sc-add-to-cart" data-name="감자빵" data-price="2500" type="submit">ADD</button>
+                                                        </div>
+                                                   </div>
+                                                   </div>
+                                                </div>
+                                                </div>
+                        </div>           
+                    <div class="col-md-3">
+                        <div class="option">
+                            <div class="temperature">
+                                <h2>온도</h2>
+                                <select class="select-temp">
+                                    <option value="HOT">HOT</option>
+                                    <option value="ICE">ICE</option>
+                                </select>
+                            </div>
+                            <div class="size">
+                                <h2>사이즈</h2>
+                                <select class="select-size">
+                                    <option value="Regular">Regular</option>
+                                    <option value="Large">Large</option>
+                                </select>
+                            </div>
+                            <div class="requirement">
+                                <h2>기타 요청사항</h2>
+                                <input type="text" placeholder="요청 사항을 입력해주세요" class="require"/>
+                            </div>
+                        </div>
+                        <div id="cart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Menu-->
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+        
+        <script>
+            $(document).ready(function () {
+                $('#cart').simpleCart();
+            });
+        </script>
+    </body>
+    <script src="../static/js/cart.js" ></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+    </script>
+</html>
