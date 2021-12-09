@@ -28,16 +28,28 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String home() {
+		return "/main";
+	}
+
+	@GetMapping("/place")
+	public String place() {
+		return "/place";
+	}
+
+	@GetMapping("/index")
+	public String index(@RequestParam(value = "take-out", required = false) boolean takeOut) {
+		log.info("테이크아웃={}", takeOut);
 		return "/index";
 	}
 
-	@PostMapping("/")
-	public String order(@RequestBody Map<String, List<OrderItemDto>> data) {
+	@PostMapping("/index")
+	public String order(@RequestBody Map<String, List<OrderItemDto>> data,
+		@RequestParam(value = "take-out", required = false) boolean takeOut) {
 		log.info("주문 컨트롤러 호출");
 
 		List<OrderItemDto> orderItems = data.get("orderItems");
 
-		orderRepository.save(orderItems, true);
+		orderRepository.save(orderItems, takeOut);
 
 		return "redirect:/";
 	}

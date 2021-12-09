@@ -306,7 +306,7 @@
   function send_to_server() {
     console.log("result!: ", sessionStorage.getItem("result"));
     $.ajax({
-      url: "http://localhost:8080/",
+      url: "http://localhost:8080/index",
       contentType: "application/json; charset=utf-8",
       // url 추후 확인 부탁드립니다
       data: sessionStorage.getItem("result"),
