@@ -70,23 +70,4 @@ public class HomeController {
 
 		return "/orderList";
 	}
-
-	// @ResponseBody
-	// @PostMapping("/")
-	// public List<OrderDto> order(@RequestBody Map<String, List<OrderItemDto>> data,
-	// 	@RequestParam(value = "take-out") boolean takeOut) {
-	//
-	// 	List<OrderItemDto> orderItems = data.get("orderItems");
-	//
-	// 	orderRepository.save(orderItems, takeOut);
-	//
-	// 	List<Order> orderList = orderRepository.findAll();
-	// 	List<OrderDto> orderDtoList = new ArrayList<>();
-	//
-	// 	for (Order order : orderList) {
-	// 		orderDtoList.add(order.toOrderDto());
-	// 	}
-	//
-	// 	return orderDtoList;
-	// }
 }
