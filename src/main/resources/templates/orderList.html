@@ -3,21 +3,25 @@
 <head>
     <meta charset="utf-8">
     <title>문화상점 이문일공칠</title>
-    <link rel="stylesheet" type = "text/css" href="../css/main.css"/>
-    <link rel="stylesheet" type = "text/css" href="../css/navbar.css"/>
+    <link rel="stylesheet" type = "text/css" href="../static/css/navbar.css"/>
+    <link rel="stylesheet" type = "text/css" href="../static/css/orderlist.css"/>
 </head>
 <body>
 <div class ="navbar">
     <div class = "logo-container">
-        <img src="../img/logo.png" class = "logo"/>
+        <img src="../static/img/logo.png" class = "logo"/>
     </div>
 </div>
 
-<div>
-    <table border="1">
+<div class="orderlists">
+    <h3>키오스크 주문 내역</h3>
+    <table>
         <thead>
-        <tr>
-            <th>주문번호</th><th>주문 시간</th><th>주문 가격</th><th>테이크 아웃</th>
+        <tr class="table-header">
+            <th class='corner-left-top'>주문번호</th>
+            <th>주문 시간</th>
+            <th>주문 가격</th>
+            <th class='corner-right-top'>테이크 아웃</th>
         </tr>
         </thead>
         <tbody>
@@ -29,6 +33,9 @@
         </tr>
         </tbody>
     </table>
+    <div class="go-main-container">
+        <button class="go-main" onclick="window.location.href='/';">처음으로 돌아가기</button>
+    </div>
 </div>
 
 </body>
