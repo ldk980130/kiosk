@@ -46,6 +46,7 @@ public class HomeController {
 	}
 
 	@PostMapping("/index")
+	@ResponseBody
 	public String order(@RequestBody Map<String, List<OrderItemDto>> data) {
 		log.info("주문 컨트롤러 호출");
 
@@ -53,7 +54,7 @@ public class HomeController {
 
 		orderRepository.save(orderItems, takeOut);
 
-		return "redirect:/orders";
+		return "주문 완료!";
 	}
 
 	@GetMapping("/orders")

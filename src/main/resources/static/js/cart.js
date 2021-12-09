@@ -313,7 +313,7 @@
       processData: true,
       type: "post",
       success: (data) => {
-        alert("success:" + JSON.stringify(data));
+        window.location.href = './orders';
       },
       error: (err) => {
         alert("error: " + JSON.stringify(err));
