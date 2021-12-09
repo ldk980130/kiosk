@@ -75,6 +75,7 @@ public class Order {
 			.totalPrice(this.totalPrice)
 			.orderDate(this.orderDate)
 			.takeOut(this.takeOut)
+			.orderItems(this.orderItems)
 			.build();
 	}
 }

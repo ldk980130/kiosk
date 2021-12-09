@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import com.postick.kiosk.web.dto.OrderItemDto;
+
 import lombok.Getter;
 
 /**
@@ -64,5 +66,15 @@ public class OrderItem {
 		orderItem.request = request;
 
 		return orderItem;
+	}
+
+	public OrderItemDto toOrderItemDto() {
+		return OrderItemDto.builder()
+			.itemName(this.item.getName())
+			.count(this.count)
+			.size(this.request.getSize().getDescription())
+			.temperature(this.request.getTemperature().getDescription())
+			.content(request.getContent())
+			.build();
 	}
 }

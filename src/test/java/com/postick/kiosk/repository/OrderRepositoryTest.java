@@ -47,16 +47,16 @@ public class OrderRepositoryTest {
 		list.add(OrderItemDto.builder()
 			.itemName("ame")
 			.count(2)
-			.size(Size.REGULAR)
-			.temperature(Temperature.ICE)
+			.size(Size.REGULAR.getDescription())
+			.temperature(Temperature.ICE.getDescription())
 			.content("")
 			.build());
 
 		list.add(OrderItemDto.builder()
 			.itemName("cafe")
 			.count(1)
-			.size(Size.REGULAR)
-			.temperature(Temperature.ICE)
+			.size(Size.REGULAR.getDescription())
+			.temperature(Temperature.ICE.getDescription())
 			.content("")
 			.build());
 

@@ -1,5 +1,10 @@
 package com.postick.kiosk.web.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.postick.kiosk.domain.OrderItem;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,11 +22,17 @@ public class OrderDto {
 	private String orderDate;
 	private boolean takeOut;
 
+	private List<OrderItemDto> orderItemDtos = new ArrayList<>();
+
 	@Builder
-	public OrderDto(Long id, int totalPrice, String orderDate, boolean takeOut) {
+	public OrderDto(Long id, int totalPrice, String orderDate, boolean takeOut, List<OrderItem> orderItems) {
 		this.id = id;
 		this.totalPrice = totalPrice;
 		this.orderDate = orderDate;
 		this.takeOut = takeOut;
+
+		for (OrderItem orderItem : orderItems) {
+			orderItemDtos.add(orderItem.toOrderItemDto());
+		}
 	}
 }

@@ -21,7 +21,8 @@
             <th class='corner-left-top'>주문번호</th>
             <th>주문 시간</th>
             <th>주문 가격</th>
-            <th class='corner-right-top'>테이크 아웃</th>
+            <th>테이크 아웃</th>
+            <th class='corner-right-top'>주문 상세</th>
         </tr>
         </thead>
         <tbody>
@@ -30,6 +31,15 @@
             <td th:text="${order.orderDate}"></td>
             <td th:text="${order.totalPrice}"></td>
             <td th:text="${order.takeOut}"></td>
+            <td>
+                <div th:each="item : ${order.orderItemDtos}">
+                    <span th:text="${item.itemName}"></span>
+                    <span th:text="${item.size}"></span>
+                    <span th:text="${item.temperature}"></span>
+                    <span th:text="${item.count}"></span>
+                    <span th:text="${item.content}"></span>
+                </div>
+            </td>
         </tr>
         </tbody>
     </table>

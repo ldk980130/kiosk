@@ -2,6 +2,9 @@ package com.postick.kiosk.domain.option;
 
 import java.util.stream.Stream;
 
+import lombok.Getter;
+
+@Getter
 public enum Size {
 
 	REGULAR("Regular"), LARGE("Large"), NOTHING("NOTHING");

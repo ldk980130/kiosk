@@ -2,6 +2,9 @@ package com.postick.kiosk.domain.option;
 
 import java.util.stream.Stream;
 
+import lombok.Getter;
+
+@Getter
 public enum Temperature {
 
 	ICE("ICE"), HOT("HOT"), NOTHING("NOTHING");
