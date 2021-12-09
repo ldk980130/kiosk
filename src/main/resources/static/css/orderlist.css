@@ -1,0 +1,86 @@
+*{
+    overflow:visible;
+    overflow-x: hidden;
+}
+
+.orderlists{
+    padding: 50px;
+    text-align: center;
+    min-height: 80vh;
+    max-height: 100vh;
+    position: relative;
+    background-image: url('../img/cafe.png');
+    overflow: hidden !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.orderlists h3{
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.orderlists table{
+    width: 60%;
+    border-spacing: 0px;
+    margin: auto;
+}
+
+thead{
+    border-top-left-radius: 4px;
+}
+
+.table-header{
+    background-color: #036655;
+    color: #B78858;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.table-header th{
+    padding: 10px;
+
+}
+
+.corner-left-top{
+    border-top-left-radius: 8px;
+    width: 20%;
+    padding-left: 40px !important;
+}
+
+.corner-right-top{
+    border-top-right-radius: 8px;
+}
+
+tbody {
+    min-height: 30px;
+    border-bottom: #e5e5e5;
+    background: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+tbody td{
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.go-main-container{
+    padding: 20px;
+}
+
+.go-main{
+    background-color: #036655;
+    color: #B78858;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px;
+    cursor: pointer;
+    width: 300px;
+    height: 50px;
+    border-radius: 12px;
+}
+
