@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>문화상점 이문일공칠</title>
+    <link rel="stylesheet" type = "text/css" href="../css/main.css"/>
+    <link rel="stylesheet" type = "text/css" href="../css/navbar.css"/>
+</head>
+<body>
+<div class ="navbar">
+    <div class = "logo-container">
+        <img src="../img/logo.png" class = "logo"/>
+    </div>
+</div>
+
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>주문번호</th><th>주문 시간</th><th>주문 가격</th><th>테이크 아웃</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order : ${orders}">
+            <td th:text="${order.id}"></td>
+            <td th:text="${order.orderDate}"></td>
+            <td th:text="${order.totalPrice}"></td>
+            <td th:text="${order.takeOut}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

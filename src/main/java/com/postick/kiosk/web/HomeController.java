@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -52,7 +53,21 @@ public class HomeController {
 
 		orderRepository.save(orderItems, takeOut);
 
-		return "redirect:/";
+		return "redirect:/orders";
+	}
+
+	@GetMapping("/orders")
+	public String showOrders(Model model) {
+		List<Order> orderList = orderRepository.findAll();
+		List<OrderDto> orderDtoList = new ArrayList<>();
+
+		for (Order order : orderList) {
+			orderDtoList.add(order.toOrderDto());
+		}
+
+		model.addAttribute("orders", orderDtoList);
+
+		return "/orderList";
 	}
 
 	// @ResponseBody
