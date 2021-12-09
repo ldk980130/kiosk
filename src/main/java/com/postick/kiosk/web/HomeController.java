@@ -25,6 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 public class HomeController {
 
 	private final OrderRepository orderRepository;
+	private static boolean takeOut = false;
 
 	@GetMapping("/")
 	public String home() {
@@ -37,14 +38,14 @@ public class HomeController {
 	}
 
 	@GetMapping("/index")
-	public String index(@RequestParam(value = "take-out", required = false) boolean takeOut) {
-		log.info("테이크아웃={}", takeOut);
+	public String index(@RequestParam(value = "take-out", required = false) boolean parameter) {
+		log.info("테이크아웃={}", parameter);
+		takeOut = parameter;
 		return "/index";
 	}
 
 	@PostMapping("/index")
-	public String order(@RequestBody Map<String, List<OrderItemDto>> data,
-		@RequestParam(value = "take-out", required = false) boolean takeOut) {
+	public String order(@RequestBody Map<String, List<OrderItemDto>> data) {
 		log.info("주문 컨트롤러 호출");
 
 		List<OrderItemDto> orderItems = data.get("orderItems");
