@@ -70,6 +70,10 @@ public class HomeController {
 
 		List<OrderItemDto> orderItems = data.get("orderItems");
 
+		if (orderItems.isEmpty()) {
+			return "상품을 선택해 주십시오.";
+		}
+
 		orderRepository.save(orderItems, takeOut);
 
 		return "주문 완료!";
