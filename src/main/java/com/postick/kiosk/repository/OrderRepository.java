@@ -54,7 +54,7 @@ public class OrderRepository {
 	 * JPQL을 사용해 모든 Order 객체를 가져올 수 있다.
 	 */
 	public List<Order> findAll() {
-		return em.createQuery("select o from Order o", Order.class)
+		return em.createQuery("select o from Order o order by o.id desc", Order.class)
 			.getResultList();
 	}
 }
