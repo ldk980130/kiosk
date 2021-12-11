@@ -68,6 +68,10 @@ public class OrderItem {
 		return orderItem;
 	}
 
+	/**
+	 * 웹 화면으로 클래스의 정보를 내보낼 때 필요 없는 메소드나 연관관계를 제외하고
+	 * 필요한 정보만을 포함하기 위한 Dto 클래스로 변환하는 메소드
+	 */
 	public OrderItemDto toOrderItemDto() {
 		return OrderItemDto.builder()
 			.itemName(this.item.getName())

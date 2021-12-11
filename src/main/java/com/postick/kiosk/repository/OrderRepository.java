@@ -51,7 +51,7 @@ public class OrderRepository {
 
 	/**
 	 * 모든 주문을 조회하는 메소드
-	 * JPQL을 사용해 모든 Category 객체를 가져올 수 있다.
+	 * JPQL을 사용해 모든 Order 객체를 가져올 수 있다.
 	 */
 	public List<Order> findAll() {
 		return em.createQuery("select o from Order o", Order.class)
