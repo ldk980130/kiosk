@@ -61,7 +61,7 @@
       _setupCart: function () {
         this.cart_ele.addClass("cart-grid panel panel-defaults");
         this.cart_ele.append(
-          "<div class='panel-heading cart-heading'><div class='total-cart-count'>Order</div><div class='spacer'></div><div></div></div>"
+          "<div class='panel-heading cart-heading'><div class='spacer'></div><div></div></div>"
         );
         this.cart_ele.append(
           "<div class='panel-body cart-body'><div class='cart-products-list' id='show-cart'><!-- Dynamic Code from Script comes here--></div></div>"
