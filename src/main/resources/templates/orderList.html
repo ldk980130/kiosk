@@ -5,6 +5,7 @@
     <title>문화상점 이문일공칠</title>
     <link rel="stylesheet" type = "text/css" href="../css/navbar.css"/>
     <link rel="stylesheet" type = "text/css" href="../css/orderlist.css"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
 <div class ="navbar">
@@ -45,11 +46,11 @@
         </tr>
         </tbody>
     </table>
-
-    <a th:if="${page > 0}" th:href="@{/orders/{page}(page=${page - 1})}">이전 페이지</a>
-    <p th:text="${page}"></p>
-    <a th:href="@{/orders/{page}(page=${page + 1})}">다음 페이지</a>
-
+    <div class="page-link-container">
+        <a class="previous-page" th:if="${page > 0}" th:href="@{/orders/{page}(page=${page - 1})}"><i class="fas fa-chevron-left"></i></a>
+        <span class="this-page" th:text="${page}">3</span>
+        <a class="next-page" th:href="@{/orders/{page}(page=${page + 1})}"><i class="fas fa-chevron-right"></i></a>
+    </div>
     <div class="go-main-container">
         <button class="go-main" onclick="window.location.href='/';">처음으로 돌아가기</button>
     </div>
