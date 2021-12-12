@@ -45,6 +45,11 @@
         </tr>
         </tbody>
     </table>
+
+    <a th:if="${page > 0}" th:href="@{/orders/{page}(page=${page - 1})}">이전 페이지</a>
+    <p th:text="${page}"></p>
+    <a th:href="@{/orders/{page}(page=${page + 1})}">다음 페이지</a>
+
     <div class="go-main-container">
         <button class="go-main" onclick="window.location.href='/';">처음으로 돌아가기</button>
     </div>

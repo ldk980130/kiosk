@@ -57,4 +57,17 @@ public class OrderRepository {
 		return em.createQuery("select o from Order o order by o.id desc", Order.class)
 			.getResultList();
 	}
+
+	/**
+	 *
+	 * @param start : 조회할 주문 테이블이 시작 번호
+	 * @param end : 조회할 주문 테테이블의 끝 번호
+	 * @return 정해진 개수만큼 주문을 리턴
+	 */
+	public List<Order> page(int start, int end) {
+		return em.createQuery("select o from Order o order by o.id desc", Order.class)
+			.setFirstResult(start)
+			.setMaxResults(end)
+			.getResultList();
+	}
 }
