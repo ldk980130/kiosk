@@ -104,3 +104,32 @@ tbody td{
 .detail-column {
     width: 40%;
 }
+
+.page-link-container{
+    width: 20%;
+    margin:auto;
+    height: 50px;
+    padding: 10px;
+}
+
+.previous-page{
+    float: left;
+    color: #fff;
+    cursor: pointer;
+}
+
+.next-page{
+    float: right;
+    color: #fff;
+    cursor: pointer;
+}
+
+.this-page{
+    background-color: #036655;
+    color: #B78858;
+    font-weight: 900;
+    border-radius: 4px;
+    width: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
