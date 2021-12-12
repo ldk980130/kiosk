@@ -34,7 +34,7 @@ public class HomeController {
 	 */
 	@GetMapping("/")
 	public String home() {
-		return "/main";
+		return "main";
 	}
 
 	/**
@@ -43,7 +43,7 @@ public class HomeController {
 	 */
 	@GetMapping("/place")
 	public String place() {
-		return "/place";
+		return "place";
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class HomeController {
 	public String index(@RequestParam(value = "take-out", required = false) boolean parameter) {
 		log.info("테이크아웃={}", parameter);
 		takeOut = parameter;
-		return "/index";
+		return "index";
 	}
 
 	/**
@@ -95,6 +95,6 @@ public class HomeController {
 
 		model.addAttribute("orders", orderDtoList);
 
-		return "/orderList";
+		return "orderList";
 	}
 }
