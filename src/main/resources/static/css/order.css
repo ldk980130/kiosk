@@ -15,7 +15,7 @@
 ::selection{
     background: #036655;
     color: #fff;
-  }
+}
 
 .container{
     width: 100%;
@@ -65,9 +65,23 @@
     color: #fff;
   }
 
+  #coffee:checked ~ .list label.coffee .img-white,
+  #tea:checked ~ .list label.tea .img-white,
+  #juice:checked ~ .list label.juice .img-white,
+  #bakery:checked ~ .list label.bakery .img-white{
+    display: block;
+    width:50px;
+  }
+
+  #coffee:checked ~ .list label.coffee .img-dark,
+  #tea:checked ~ .list label.tea .img-dark,
+  #juice:checked ~ .list label.juice .img-dark,
+  #bakery:checked ~ .list label.bakery .img-dark{
+    display: none;
+  }
+
   .content .list label:hover{
     color: #036655;
-    color: #fff;
   }
   .content .slider{
     position: absolute;
@@ -139,6 +153,10 @@
     text-align: center;
 }
 
+.img-white {
+  display: none;
+}
+
 .menu{
     width: 900px;
     display: grid;
@@ -150,12 +168,13 @@
 .box{
     margin-right: 22px;
     margin-top: 22px;
-    height: 185px;
-    width: 174px;
+    height: 175px;
+    width: 164px;
     border: 1px solid #e5e5e5;
     border-radius: 12px;
     text-align: center;
     cursor: pointer;
+    padding: 5px;
 }
 
 .order-container{
@@ -188,11 +207,69 @@
 }
 
 .option{
+  /* border: 1px solid #e5e5e5; */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.temperature, .size, .requirement{
+  display: block;
+  margin: 10px;
+}
+
+.temperature h3, .size h3, .requirement h3 {
+  float: left;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.temperature select, .size select {
+  float: right;
   background-color: #e5e5e5;
-  height: 200px;
+  border: none;
+  padding: 3px;
+  width: 100px;
+  border-radius: 4px;
 }
 
 .requirement input{
   display: block;
+  width: 280px;
+  padding: 10px;
+  border: none;
+  background-color: #e5e5e5;
 }
 
+.add-button button{
+  width: 50px;
+  padding: 3px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  border: 2px solid #3EB489;
+  color: #3EB489;
+  background-color: #fff;
+  font-weight: 700;
+}
+
+.add-button button:hover{
+  background: #3EB489;
+  color: #fff;
+  transition: 0.5s ease;
+}
+
+.caution {
+  font-size: 12px;
+  color: #777777;
+  text-align: center;
+}
+
+@media screen and (min-width:360px) and (max-width:1024px){
+  .content input{
+    display: none;
+  }
+  .text-content{
+    display: none;
+  }
+  
+}
