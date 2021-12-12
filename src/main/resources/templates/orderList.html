@@ -31,13 +31,15 @@
             <td th:text="${order.orderDate}"></td>
             <td th:text="${order.totalPrice}"></td>
             <td th:text="${order.takeOut}"></td>
-            <td>
-                <div th:each="item : ${order.orderItemDtos}">
-                    <span th:text="${item.itemName}"></span>
-                    <span th:text="${item.size}"></span>
-                    <span th:text="${item.temperature}"></span>
-                    <span th:text="${item.count}"></span>
-                    <span th:text="${item.content}"></span>
+            <td class="detail-column">
+                <div th:each="item : ${order.orderItemDtos}" class="order-details">
+                    <div class="order-items">
+                        <span th:text="${item.itemName}" class="items"></span><br/>
+                        <span th:text="${item.size}"></span>
+                        <span th:text="${item.temperature}"></span>
+                        <span th:text="${item.count}"></span><br/>
+                        <span th:text="${item.content}"></span>
+                    </div>
                 </div>
             </td>
         </tr>
@@ -47,6 +49,5 @@
         <button class="go-main" onclick="window.location.href='/';">처음으로 돌아가기</button>
     </div>
 </div>
-
 </body>
 </html>

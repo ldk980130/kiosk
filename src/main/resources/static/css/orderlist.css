@@ -1,6 +1,9 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
 *{
     overflow:visible;
     overflow-x: hidden;
+    font-family: 'pretendard';
 }
 
 .orderlists{
@@ -23,7 +26,7 @@
 }
 
 .orderlists table{
-    width: 60%;
+    width: 70%;
     border-spacing: 0px;
     margin: auto;
 }
@@ -84,3 +87,20 @@ tbody td{
     border-radius: 12px;
 }
 
+.order-details {
+    text-align: left;
+    padding: 10px;
+}
+
+
+.order-details span{
+    font-size: 14px;
+}
+
+.items {
+    font-weight: 700;
+}
+
+.detail-column {
+    width: 40%;
+}
