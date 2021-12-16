@@ -48,7 +48,7 @@
     </table>
     <div class="page-link-container">
         <a class="previous-page" th:if="${page > 0}" th:href="@{/orders/{page}(page=${page - 1})}"><i class="fas fa-chevron-left"></i></a>
-        <span class="this-page" th:text="${page}">3</span>
+        <span class="this-page" th:text="${page}"></span>
         <a class="next-page" th:href="@{/orders/{page}(page=${page + 1})}"><i class="fas fa-chevron-right"></i></a>
     </div>
     <div class="go-main-container">
