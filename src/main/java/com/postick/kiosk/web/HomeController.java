@@ -78,7 +78,7 @@ public class HomeController {
 
 		orderRepository.save(orderItems, takeOut);
 
-		return "주문 완료!";
+		return "주문 내역 페이지로 이동합니다.";
 	}
 
 	/**
