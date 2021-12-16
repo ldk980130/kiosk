@@ -28,6 +28,7 @@ public class HomeController {
 
 	private final OrderRepository orderRepository;
 	private static boolean takeOut = false;
+	private static int pageSize = 3;
 
 	/**
 	 * Get 요청으로 "/"이  들어오면 실행되는 메소드
@@ -77,7 +78,7 @@ public class HomeController {
 
 		orderRepository.save(orderItems, takeOut);
 
-		return "주문 완료!";
+		return "주문 내역 페이지로 이동합니다.";
 	}
 
 	/**
@@ -91,9 +92,9 @@ public class HomeController {
 			page = 0;
 		}
 
-		int start = page * 3;
+		int start = page * pageSize;
 
-		List<Order> orderList = orderRepository.page(start, 3);
+		List<Order> orderList = orderRepository.page(start, pageSize);
 		List<OrderDto> orderDtoList = new ArrayList<>();
 
 		for (Order order : orderList) {

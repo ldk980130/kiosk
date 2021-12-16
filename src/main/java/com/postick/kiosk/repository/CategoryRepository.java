@@ -1,6 +1,5 @@
 package com.postick.kiosk.repository;
 
-import java.util.List;
 import java.util.Optional;
 
 import javax.persistence.EntityManager;
@@ -44,14 +43,5 @@ public class CategoryRepository {
 			.setParameter("name", name)
 			.getResultStream()
 			.findFirst();
-	}
-
-	/**
-	 * 모든 상품을 조회하는 메소드
-	 * JPQL을 사용해 모든 Category 객체를 가져올 수 있다.
-	 */
-	public List<Category> findAll() {
-		return em.createQuery("select c from Category c", Category.class)
-			.getResultList();
 	}
 }

@@ -34,15 +34,15 @@ public class OrderItem {
 	@Column(nullable = false)
 	private Integer count; // 주문 수량
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "item_id")
 	private Item item; // 주문하는 상품
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "order_id")
 	private Order order; // 주문상품이 포함되는 주문
 
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "request_id")
 	private Request request; // 주문상품의 요청사항
 
