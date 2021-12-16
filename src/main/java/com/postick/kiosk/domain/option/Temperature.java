@@ -19,7 +19,7 @@ public enum Temperature {
 	}
 
 	/**
-	 * @param description : 웹 화면에서 넘어온 사이즈 문자열
+	 * @param description : 웹 화면에서 넘어온 온도 문자열
 	 * @return : 문자열을 해당 Enum 타입으로 리턴
 	 */
 	public static Temperature get(String description) {
