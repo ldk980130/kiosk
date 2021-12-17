@@ -190,6 +190,7 @@
         for (var i in this.cart) {
           if (this.cart[i].name === name) {
             var singleItemCost = Number(price / this.cart[i].count);
+            this.cart[i].count = count; /*수량 조절 버튼*/
             this.cart[i].price = singleItemCost * count;
             if (count == 0) {
               this.cart.splice(i, 1);
